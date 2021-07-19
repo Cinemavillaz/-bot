@@ -153,7 +153,7 @@ async def auto_filter(bot, update):
         
         # Just A Decaration
         result[0].append([
-            InlineKeyboardButton(f"🔰 Page 1/{len_result if len_result < max_pages else max_pages} 🔰", callback_data="ignore")
+            InlineKeyboardButton(f"⭕️𝑴𝑨𝑿𝑰𝑴𝑼𝑴 𝑷𝑨𝑮𝑬𝑺 1/{len_result if len_result < max_pages else max_pages} ⭕️", callback_data="ignore")
         ])
         
         
@@ -164,7 +164,7 @@ async def auto_filter(bot, update):
             achatId = []
             await gen_invite_links(configs, group_id, bot, update)
             
-            for x in achats["chats"] if isinstance(achats, dict) else achats:
+            for x in achats["chats"] if isinstance(achats, dict) else achats:o
                 achatId.append(int(x["chat_id"])) if isinstance(x, dict) else achatId.append(x)
 
             ACTIVE_CHATS[str(group_id)] = achatId
@@ -203,7 +203,7 @@ async def auto_filter(bot, update):
         try:
             await bot.send_message(
                 chat_id = update.chat.id,
-                text=f"Found {(len_results)} Results For Your Query: <code>{query}</code>",
+                text=f"Found 🗂️ {(len_results)} Results For Your Query: <code>{query}</code>",
                 reply_markup=reply_markup,
                 parse_mode="html",
                 reply_to_message_id=update.message_id
